@@ -1,0 +1,6 @@
+# Tello request: direction and distance
+string dir
+float32 dist
+---
+# response: if it works or not
+bool result

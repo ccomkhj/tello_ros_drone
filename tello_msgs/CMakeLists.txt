@@ -25,6 +25,7 @@ find_package(std_msgs REQUIRED)
 rosidl_generate_interfaces(
   ${PROJECT_NAME}
   "msg/FlightData.msg"
+  "msg/FlightCondition.msg"
   "msg/TelloResponse.msg"
   "srv/TelloAction.srv"
   DEPENDENCIES std_msgs

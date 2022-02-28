@@ -1,0 +1,10 @@
+# The desired heading in m, m, m ,rad # Request
+# dir should be x or y or z or xy
+string dir
+float32 dist
+---
+# The displacement in m to the starting position # Result
+float32 delta
+---
+# The remaining rotation in m, m, m, rad # Feedback
+float32 remain

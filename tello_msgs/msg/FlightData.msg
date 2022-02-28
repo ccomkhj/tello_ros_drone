@@ -19,13 +19,7 @@ uint8 sdk
 # SDK 1.3+ fields
 #######
 
-int32 pitch   # pitch in degrees
-int32 roll    # roll in degrees
-int32 yaw     # yaw in degrees relative to startup orientation
 
-int32 vgx     # x velocity in m/s, +forward
-int32 vgy     # y velocity in m/s, +right
-int32 vgz     # z velocity in m/s, +down
 
 int32 templ   # lowest temp in C
 int32 temph   # highest temp in C
@@ -38,10 +32,6 @@ int32 bat     # battery %
 float32 baro  # barometric altitude in m
 int32 time    # time used by motor in seconds
 
-# Acceleration includes gravity
-float32 agx   # x acceleration in mm/s^2, +forward
-float32 agy   # y acceleration in mm/s^2, +right
-float32 agz   # z acceleration in mm/s^2, +down
 
 #######
 # SDK 2.0+ fields
