@@ -71,12 +71,12 @@ namespace tello_driver
           msg.z = std::stoi(fields["z"]);
         }
 
-        msg.pitch = std::stoi(fields["pitch"]);
-        msg.roll = std::stoi(fields["roll"]);
-        msg.yaw = std::stoi(fields["yaw"]);
-        msg.vgx = std::stoi(fields["vgx"]);
-        msg.vgy = std::stoi(fields["vgy"]);
-        msg.vgz = std::stoi(fields["vgz"]);
+        // msg.pitch = std::stoi(fields["pitch"]);
+        // msg.roll = std::stoi(fields["roll"]);
+        // msg.yaw = std::stoi(fields["yaw"]);
+        // msg.vgx = std::stoi(fields["vgx"]);
+        // msg.vgy = std::stoi(fields["vgy"]);
+        // msg.vgz = std::stoi(fields["vgz"]);
         msg.templ = std::stoi(fields["templ"]);
         msg.temph = std::stoi(fields["temph"]);
         msg.tof = std::stoi(fields["tof"]);
@@ -84,9 +84,9 @@ namespace tello_driver
         msg.bat = std::stoi(fields["bat"]);
         msg.baro = std::stof(fields["baro"]);
         msg.time = std::stoi(fields["time"]);
-        msg.agx = std::stof(fields["agx"]);
-        msg.agy = std::stof(fields["agy"]);
-        msg.agz = std::stof(fields["agz"]);
+        // msg.agx = std::stof(fields["agx"]);
+        // msg.agy = std::stof(fields["agy"]);
+        // msg.agz = std::stof(fields["agz"]);
 
       } catch (std::exception e) {
         RCLCPP_ERROR(driver_->get_logger(), "Can't parse flight data");

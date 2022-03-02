@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "move_server = tello_action.tello_move_server:main"
         ],
     },
 )

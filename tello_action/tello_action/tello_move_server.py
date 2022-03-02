@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from tello_interfaces.action import Move
 from tello_interfaces.srv import HexaCmd
 from tello_msgs.msg import FlightCondition
 from tello_msgs.srv import TelloAction
-from rclpy.action import ActionServer
 from functools import partial
 import queue
 import numpy as np
@@ -44,6 +42,7 @@ class MoveServerNode(Node):
         
         self.dir = request.dir
         self.dist = request.dist
+        self.travel_distance = np.array([0.,0.,0.,0.]) # reset the relative location.
         self.get_logger().info("Moving toward "+self.dir + "direction, "+ str(self.dist)+"m")
 
         response.result = True
@@ -93,11 +92,12 @@ class MoveServerNode(Node):
         else: 
             return 1
         
-        if abs(self.remain) > 0.1:
+        if abs(self.remain) > 0.05:
             self.call_pid_control(self)
 
-        elif abs(self.remain) < 0.1 and self.count <= 30:
-            self.get_logger().info('Moving around the target')
+        elif abs(self.remain) < 0.05 and self.count <= 50:
+            if not self.count%10:
+                self.get_logger().info('Moving around the target')
             self.count += 1
             self.call_pid_control(self)
             
@@ -134,7 +134,7 @@ class MoveServerNode(Node):
             self.get_logger().warn("Waiting for Server of tello_action_cmd")
         
         Kd = 0.1
-        Kp = 0.1
+        Kp = 0.05
         Ki = 0.01
 
         if not self.dt_: self.dt_ = 0.01
@@ -151,7 +151,7 @@ class MoveServerNode(Node):
             request.cmd = "rc 0 0 %0.03f 0"%(value)
             self.get_logger().info(f"{request.cmd} in {self.dir}")
         if self.dir=="xy": 
-            request.cmd = "rc 0 0 0 %0.03f"%(value)
+            request.cmd = "rc 0 0 0 %0.03f"%(value*4) # angular velocity needs more gain.
             self.get_logger().info(f"{request.cmd} in {self.dir}")
 
         future = client.call_async(request)

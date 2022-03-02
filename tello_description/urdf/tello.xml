@@ -36,28 +36,28 @@
         <visual>
             <origin xyz="0.05 -0.05 0"/>
             <geometry>
-                <cylinder length="0.01" radius="0.045"/>
+                <cylinder length="0.01" radius="0.042"/>
             </geometry>
             <material name="gray"/>
         </visual>
         <visual>
             <origin xyz="-0.05 0.05 0"/>
             <geometry>
-                <cylinder length="0.01" radius="0.045"/>
+                <cylinder length="0.01" radius="0.042"/>
             </geometry>
             <material name="gray"/>
         </visual>
         <visual>
             <origin xyz="-0.05 -0.05 0"/>
             <geometry>
-                <cylinder length="0.01" radius="0.045"/>
+                <cylinder length="0.01" radius="0.042"/>
             </geometry>
             <material name="gray"/>
         </visual>
         <visual>
             <origin xyz="0.05 0.05 0"/>
             <geometry>
-                <cylinder length="0.01" radius="0.045"/>
+                <cylinder length="0.01" radius="0.042"/>
             </geometry>
             <material name="gray"/>
         </visual>
@@ -151,6 +151,11 @@
                 <distortionT2>0.0</distortionT2>
             </plugin>
         </sensor>
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="base_link${suffix}">
+        <material>Gazebo/Blue</material>
     </gazebo>
 
 </robot>

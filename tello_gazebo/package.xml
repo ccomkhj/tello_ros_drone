@@ -23,8 +23,11 @@
     <depend>rclcpp</depend>
     <depend>std_msgs</depend>
     <depend>tello_msgs</depend>
+    <depend>tello_interfaces</depend>
 
     <exec_depend>gazebo_ros_pkgs</exec_depend>
+    <exec_depend>tello_action</exec_depend>
+
 
     <export>
         <build_type>ament_cmake</build_type>
