@@ -25,6 +25,8 @@ I have developed distance based service call.
 dir should be among x, y, z, xy. (xy means z axis rotation), the unit of dist is m or radian.
 
 ### Replicate the hexafarms' simulation (video below)
+`source {tello_ros_ws}/install/setup.bash`
+`ros2 launch tello_gazebo hexa_launch.py`
 `./demo/hexa_drone_rc.bash`
 
 [![Drone Simulation](demo/simulation.jpg)](https://www.youtube.com/watch?v=xrCZIiciP90 "Drone Simulation")
