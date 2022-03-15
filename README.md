@@ -26,7 +26,7 @@ dir should be among x, y, z, xy. (xy means z axis rotation), the unit of dist is
 
 ### Replicate the hexafarms' simulation (video below)
 `source {tello_ros_ws}/install/setup.bash`
-`ros2 launch tello_gazebo hexa_launch.py`
+`ros2 launch tello_gazebo simple_launch.py`
 `./demo/hexa_drone_rc.bash`
 
-[![Drone Simulation](demo/simulation.jpg)](https://www.youtube.com/watch?v=xrCZIiciP90 "Drone Simulation")
+[![Drone Simulation](demo/simulation.jpg)](https://www.youtube.com/watch?v=oDkaEsyvzA4 "Drone Simulation")
